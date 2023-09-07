@@ -73,7 +73,5 @@ if total_used_gb:
     output = model.predict(features_df)
     if output == 1:
         st.error("Alert: Possible Churn Risk")
-        st.write("With a '1' prediction, the model indicates a substantial likelihood that this customer may be considering leaving.")
     elif output == 0:
         st.success("Steadfast Customer: Demonstrating Loyalty")
-        st.write("With a '0' prediction, it's as if the model is endorsing this customer's loyalty. The probability of them leaving? Let's just say they are firmly situated in the 'unlikely to leave' category.")
