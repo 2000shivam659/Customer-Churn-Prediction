@@ -2,8 +2,9 @@
 
   1. Clone the model.
   2. Open in Visual Studio Code.
-  3. run the command in terminal "streamlit run app.py".
-  4. Enter the values and hit enter.
+  3. Run the command in terminal "streamlit run app.py".
+  4. A tab will open in your web browser.
+  5. Enter the values and hit enter.
 
 # My Procedure
 
