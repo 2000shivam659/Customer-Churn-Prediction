@@ -9,3 +9,4 @@
 # My Procedure
 
 Applied different ML and a ANN on Customer Churn Prediction model such as Logistic Regression, Support Vector Classifier, Decision Tree, Random Forest, Ada Boost, Gradient Boosting, XGBoost, Extra Tree Regressor, and Neural Network. Tried to Hypertune the model with diffferent parameters.
+Also, different metrics utilized such as accuracy, precision, recall, and f1-score.
