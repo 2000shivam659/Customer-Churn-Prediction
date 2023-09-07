@@ -83,7 +83,7 @@ features = [{
     'Subscription_Length_Months': subscription_length_months,
     'Monthly_Bill': monthly_bill,
     'Total_Usage_GB': total_used_gb,
-    'Total_Bill': int(subscription_length_months) * int(monthly_bill) if subscription_length_months and monthly_bill else 0,
+    'Total_Bill': (subscription_length_months * monthly_bill) if subscription_length_months and monthly_bill else 0,
     'Location_Houston': Location_Houston,
     'Location_Los Angeles': Location_Los_Angeles,
     'Location_Miami': Location_Miami,
