@@ -38,32 +38,56 @@ st.markdown(
 
 # Take Age inputs from user
 age = st.text_input("Customer Age:")
+# Convert age to an integer (assuming age should be an integer)
+age = int(age) if age else 0
 
 # Take gender inputs from user
-gender = st.selectbox("Customer Gender", 
+gender_input = st.selectbox("Customer Gender", 
                       ['Male', 'Female'])
+gender = 1 if gender_input == 'Male' else 0
 
 # Take location inputs from user
 location = st.selectbox("Customer Location", 
                         ['Houston', 'Los Angeles', 'Miami', 'Chicago', 'New York'])
+Location_Houston, Location_Los_Angeles, Location_Miami, Location_Chicago, Location_New_York = 0, 0, 0, 0, 0
+if location == 'Houston':
+    Location_Houston = 1
+elif location == 'Los Angeles':
+    Location_Los_Angeles = 1   
+elif location == 'Miami':
+    Location_Miami = 1
+elif location == 'New York':
+    Location_New_York = 1
+else:
+    Location_Chicago = 1
 
 # Take Month Of Subscription inputs from user
 subscription_length_months = st.text_input("Subscription Months:")
+# Convert subscription_length_months to an integer (assuming it should be an integer)
+subscription_length_months = int(subscription_length_months) if subscription_length_months else 0
 
 # Take Monthly Bill inputs from user
 monthly_bill = st.text_input("Monthly Bill ($):")
+# Convert monthly_bill to a float (assuming it should be a floating-point number)
+monthly_bill = float(monthly_bill) if monthly_bill else 0.0
 
 # Take Total Used GB inputs from user
 total_used_gb = st.text_input("Total Usage (GB):")
+# Convert total_used_gb to a float (assuming it should be a floating-point number)
+total_used_gb = int(total_used_gb) if total_used_gb else 0
 
 # Create an array of all these inputs
 features = [{
     'Age': age,
     'Gender': gender,
-    'Location': location,
     'Subscription_Length_Months': subscription_length_months,
     'Monthly_Bill': monthly_bill,
-    'Total_Usage_GB': total_used_gb
+    'Total_Usage_GB': total_used_gb,
+    'Total_Bill': int(subscription_length_months) * int(monthly_bill) if subscription_length_months and monthly_bill else 0,
+    'Location_Houston': Location_Houston,
+    'Location_Los Angeles': Location_Los_Angeles,
+    'Location_Miami': Location_Miami,
+    'Location_New York': Location_New_York,
 }]
 
 # Convert it to pandas DataFrame before passing it to the model
